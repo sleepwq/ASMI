@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASMI — Assistente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jura:wght@700&family=Manrope:wght@400;500;600;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-gantt" viewBox="0 0 24 24"><path d="M10 6h8"/><path d="M12 16h6"/><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 11h7"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+    <symbol id="i-line" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+    <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-down-left" viewBox="0 0 24 24"><path d="M17 7 7 17"/><path d="M17 17H7V7"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
+    <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-plus-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-cal-clock" viewBox="0 0 24 24"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v4"/><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M3 10h5"/><path d="M8 2v4"/><circle cx="16" cy="16" r="6"/></symbol>
+    <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></symbol>
+    <linearGradient id="gg" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#8e5ffa"/><stop offset="1" stop-color="#0061ff"/></linearGradient>
+  </defs>
+</svg>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ LOGIN ============ -->
+<div id="v-login" class="login" hidden>
+  <header class="login-head">
+    <div class="login-in">
+      <div class="login-brand">
+        <span class="brand">ASMI</span>
+        <h1 id="login-title">Entrar</h1>
+      </div>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Alternar tema claro e escuro"><svg class="ic"><use href="#i-contrast"/></svg></button>
+    </div>
+  </header>
+  <div class="login-in login-body">
+    <form id="login-form" class="form" novalidate>
+      <div class="field" id="f-name" hidden>
+        <label for="in-name">Nome</label>
+        <div class="input"><input id="in-name" type="text" placeholder="Como devemos chamar você?" autocomplete="name"><svg class="ic ic-2"><use href="#i-user"/></svg></div>
+        <p class="err" id="err-name"></p>
+      </div>
+      <div class="field">
+        <label for="in-email">E-mail</label>
+        <div class="input" id="w-email"><input id="in-email" type="email" placeholder="exemplo@empresa.com" autocomplete="email"><svg class="ic ic-2"><use href="#i-user"/></svg></div>
+        <p class="err" id="err-email"></p>
+      </div>
+      <div class="field">
+        <div class="lbl-row"><label for="in-pass">Senha</label><button type="button" class="link" id="forgot">Esqueceu a senha?</button></div>
+        <div class="input" id="w-pass"><input id="in-pass" type="password" placeholder="••••••••" autocomplete="current-password"><svg class="ic ic-2"><use href="#i-lock"/></svg></div>
+        <p class="err" id="err-pass"></p>
+      </div>
+      <label class="check"><input type="checkbox" id="in-keep" checked><span class="box"><svg class="ic"><use href="#i-check"/></svg></span>Manter conectado</label>
+      <button class="btn btn-primary btn-lg" type="submit" id="login-submit">Entrar</button>
+    </form>
+    <div class="or"><span>ou</span></div>
+    <button class="btn btn-outline btn-lg" type="button" id="google">
+      <svg class="g-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="url(#gg)"/><text x="12" y="16.2" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#fff">G</text></svg>
+      <span id="google-label">Entrar com Google</span>
+    </button>
+    <p class="switch"><span id="switch-text">Não tem uma conta?</span><button type="button" class="link" id="switch-mode">Cadastre-se</button></p>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="v-app" class="app" hidden>
+  <nav id="rail" class="rail" aria-label="Navegação principal"></nav>
+  <div class="stage">
+
+    <!-- Assistente -->
+    <main id="page-assistente" class="page" hidden>
+      <div class="col" style="display:flex;flex-direction:column;flex:1">
+        <header class="topbar">
+          <a class="brand" href="#/assistente" aria-label="ASMI — ir para o assistente">ASMI</a>
+          <div class="topbar-r"><span class="status"><i></i>Assistente ativo</span><button class="icon-btn" type="button" data-theme-toggle aria-label="Alternar tema claro e escuro"><svg class="ic"><use href="#i-contrast"/></svg></button></div>
+        </header>
+        <section class="welcome" id="welcome">
+          <div>
+            <h1>Olá! Como posso ajudar?</h1>
+            <p>Organize sua rotina, acompanhe seus planos e cuide das suas finanças em um só lugar.</p>
+          </div>
+          <div class="sugg">
+            <button class="sug" type="button" data-q="Planejar meu dia"><svg class="ic"><use href="#i-sparkles"/></svg><div><b>Planejar meu dia</b><span>Monte uma agenda equilibrada para hoje.</span></div></button>
+            <button class="sug" type="button" data-q="Revisar finanças"><svg class="ic"><use href="#i-line"/></svg><div><b>Revisar finanças</b><span>Veja um resumo dos gastos deste mês.</span></div></button>
+            <button class="sug" type="button" data-q="Criar cronograma"><svg class="ic"><use href="#i-list"/></svg><div><b>Criar cronograma</b><span>Divida seu objetivo em etapas simples.</span></div></button>
+          </div>
+        </section>
+        <section class="thread" id="thread" aria-live="polite" hidden></section>
+        <div class="composer-wrap">
+          <form class="composer" data-composer autocomplete="off">
+            <div class="composer-field">
+              <input type="text" placeholder="Pergunte qualquer coisa..." aria-label="Mensagem para a ASMI">
+              <button class="send" type="submit" aria-label="Enviar mensagem"><svg class="ic"><use href="#i-up-right"/></svg></button>
+            </div>
+            <p class="aviso">A ASMI pode cometer erros. Confira informações importantes.</p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Calendário -->
+    <main id="page-calendario" class="page" hidden>
+      <div class="col">
+        <header class="topbar">
+          <a class="brand" href="#/assistente" aria-label="ASMI — ir para o assistente">ASMI</a>
+          <div class="topbar-r"><span class="status"><i></i>Assistente ativo</span><button class="icon-btn" type="button" data-theme-toggle aria-label="Alternar tema claro e escuro"><svg class="ic"><use href="#i-contrast"/></svg></button></div>
+        </header>
+        <section class="pg-head">
+          <h1>Meu calendário</h1>
+          <p>Organize compromissos e destaque períodos importantes.</p>
+        </section>
+        <section class="card cal-card">
+          <div class="cal-top">
+            <button class="nav-arrow" type="button" id="cal-prev" aria-label="Mês anterior">‹</button>
+            <h2 id="cal-month" aria-live="polite">Outubro 2026</h2>
+            <button class="nav-arrow" type="button" id="cal-next" aria-label="Próximo mês">›</button>
+            <button class="btn btn-primary btn-sm" type="button" id="open-colors">Editar cores</button>
+          </div>
+          <div class="cal-well">
+            <div class="cal-week" aria-hidden="true"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+            <div class="cal-grid" id="cal-grid"></div>
+          </div>
+          <ul class="cal-legend" id="cal-legend"></ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Notificações -->
+    <main id="page-notificacoes" class="page" hidden>
+      <div class="col">
+        <header class="topbar">
+          <a class="brand" href="#/assistente" aria-label="ASMI — ir para o assistente">ASMI</a>
+          <div class="topbar-r"><span class="status"><i></i>Assistente ativo</span><button class="icon-btn" type="button" data-theme-toggle aria-label="Alternar tema claro e escuro"><svg class="ic"><use href="#i-contrast"/></svg></button></div>
+        </header>
+        <section class="pg-head">
+          <h1>Notificações <svg class="ic ic-2" style="width:24px;height:24px"><use href="#i-bell"/></svg></h1>
+          <p>Acompanhe as atividades atribuídas nas suas plataformas escolares.</p>
+        </section>
+        <div class="filters" id="n-filters" role="group" aria-label="Filtrar por plataforma"></div>
+        <div class="n-list" id="n-list"></div>
+      </div>
+    </main>
+
+    <!-- Finanças -->
+    <main id="page-financas" class="page" hidden>
+      <div class="col-wide" style="display:flex;flex-direction:column;flex:1">
+        <header class="f-head" id="sec-visao">
+          <div>
+            <a class="brand" href="#/assistente" aria-label="ASMI — ir para o assistente">ASMI</a>
+            <p>Acompanhe suas finanças pessoais de forma clara.</p>
+          </div>
+          <div class="topbar-r">
+            <span class="status"><i></i>Atualizado agora</span>
+            <button class="icon-btn" type="button" data-theme-toggle aria-label="Alternar tema claro e escuro"><svg class="ic"><use href="#i-contrast"/></svg></button>
+            <button class="btn btn-primary btn-sm" type="button" id="new-tx"><svg class="ic ic-2" style="width:16px;height:16px"><use href="#i-plus"/></svg>Nova Transação</button>
+          </div>
+        </header>
+        <section class="metrics" id="metrics"></section>
+        <div class="f-grid">
+          <div class="f-col">
+            <section class="card f-card" id="sec-fluxo">
+              <div class="card-head">
+                <div><h2 class="f-title">Fluxo de Caixa (Histórico Semanal)</h2><p class="f-sub" style="margin-top:4px">Relação de evolução de saldo líquido</p></div>
+                <span class="legend-mini"><i></i>Evolução</span>
+              </div>
+              <div class="flow" id="flow"></div>
+            </section>
+            <section class="card f-card" id="sec-transacoes" style="gap:12px">
+              <div class="card-head" style="align-items:center">
+                <h2 class="f-title">Transações Recentes</h2>
+                <button class="link" type="button" id="toggle-tx" style="font-size:11px">Ver extrato completo</button>
+              </div>
+              <div class="tx-list" id="tx-list"></div>
+            </section>
+          </div>
+          <div class="f-col">
+            <section class="card f-card" id="sec-planejamento" style="gap:12px">
+              <div><h2 class="f-title">Gastos por Categoria</h2><p class="f-sub" style="margin-top:4px">Limite de orçamento mensal atingido</p></div>
+              <div id="cats"></div>
+            </section>
+            <section class="card f-card" id="sec-metas" style="gap:12px">
+              <div class="card-head" style="align-items:center">
+                <h2 class="f-title">Metas Financeiras</h2>
+                <button class="add-goal" type="button" id="add-goal" aria-label="Adicionar meta"><svg class="ic"><use href="#i-plus-circle"/></svg></button>
+              </div>
+              <div class="goals" id="goals"></div>
+            </section>
+          </div>
+        </div>
+        <div class="composer-wrap f-composer">
+          <form class="composer" data-composer autocomplete="off">
+            <div class="composer-field">
+              <input type="text" placeholder="Pergunte qualquer coisa..." aria-label="Mensagem para a ASMI">
+              <button class="send" type="submit" aria-label="Enviar mensagem"><svg class="ic"><use href="#i-up-right"/></svg></button>
+            </div>
+            <p class="aviso">A ASMI pode cometer erros. Confira informações importantes.</p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div id="modal-root"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
