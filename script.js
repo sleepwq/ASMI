@@ -167,18 +167,31 @@ $('#forgot').addEventListener('click',()=>{
   if(!validEmail(v)){$('#err-email').textContent='Digite seu e-mail acima para receber o link de redefinição.';$('#w-email').classList.add('bad');$('#in-email').focus();return}
   toast('Enviamos um link de redefinição para '+v);
 });
-$('#login-form').addEventListener('submit',e=>{
-  e.preventDefault();clearErrs();
-  const email=$('#in-email').value.trim(),pass=$('#in-pass').value,name=$('#in-name').value.trim();
-  let bad=false;
-  if(signup&&!name){$('#err-name').textContent='Digite seu nome.';bad=true}
-  if(!validEmail(email)){$('#err-email').textContent='Digite um e-mail válido, como nome@empresa.com.';$('#w-email').classList.add('bad');bad=true}
-  if(!pass){$('#err-pass').textContent='Digite sua senha.';$('#w-pass').classList.add('bad');bad=true}
-  else if(signup&&pass.length<6){$('#err-pass').textContent='Use pelo menos 6 caracteres.';$('#w-pass').classList.add('bad');bad=true}
-  if(bad)return;
-  enter(email,name);
+$('#login-form').addEventListener('submit', e => {
+  e.preventDefault();
+  clearErrs();
+  const email = $('#in-email').value.trim(), pass = $('#in-pass').value, name = $('#in-name').value.trim();
+  let bad = false;
+
+  if (signup && !name) { $('#err-name').textContent = 'Digite seu nome.'; bad = true; }
+  if (!validEmail(email)) { $('#err-email').textContent = 'Digite um e-mail válido, como nome@empresa.com.'; $('#w-email').classList.add('bad'); bad = true; }
+  if (!pass) { $('#err-pass').textContent = 'Digite sua senha.'; $('#w-pass').classList.add('bad'); bad = true; }
+  else if (signup && pass.length < 6) { $('#err-pass').textContent = 'Use pelo menos 6 caracteres.'; $('#w-pass').classList.add('bad'); bad = true; }
+  
+  if (bad) return;
+
+  // Validação restrita para o Administrador
+  if (email !== 'admin@gmail.com' || pass !== 'admin123') {
+    $('#err-email').textContent = 'Credenciais inválidas.';
+    $('#err-pass').textContent = 'Credenciais inválidas.';
+    $('#w-email').classList.add('bad');
+    $('#w-pass').classList.add('bad');
+    return;
+  }
+
+  enter(email, name || 'Administrador');
 });
-$('#google').addEventListener('click',()=>enter($('#in-email').value.trim()||'voce@gmail.com',$('#in-name').value.trim()));
+// $('#google').addEventListener('click',()=>enter($('#in-email').value.trim()||'voce@gmail.com',$('#in-name').value.trim())); //
 
 /* ---------- modais ---------- */
 let modalState=null;
